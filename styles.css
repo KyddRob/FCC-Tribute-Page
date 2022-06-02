@@ -1,0 +1,374 @@
+/* Assign universal parameters */
+/* Setup general classes */
+html {
+    font-size: 10px;
+    font-family: Nunito Sans;
+  }
+  
+  .white-font {
+    color: ivory;
+  }
+  
+  .red-font {
+    color: #dd0033;
+  }
+  
+  .text-shadow {
+    text-shadow: 0.5rem 0.5rem 0.75rem black;
+  }
+  
+  .border-radius {
+    border-radius: 3rem;
+  }
+  
+  /* Style the main content as a CSS grid */
+  main {
+    background: white;
+    font-size: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    justify-items: center;
+    grid-template-areas:
+      "header"
+      "biography"
+      "quote"
+      "discography";   
+  }
+  
+  /* Style the tribute image, title, caption */
+  #img-div {
+    grid-area: header;
+  }
+  
+  #image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  h1 {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    margin: 0%;
+    padding: 0%;
+    line-height: 5rem;
+    font-weight: 1000;
+    font-size: 4rem;
+    text-align: center;
+  }
+  
+  #img-caption {
+    position: absolute;
+    top: 6rem;
+    left: 2rem;
+    margin: 0%;
+    padding: 0%;
+    line-height: 1.75rem;
+    font-weight: 900;
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+  }
+  
+  /* Style biography section */
+  /* Style h2 (section) headers */
+  h2 {
+    font-weight: 800;
+    font-size: 2rem;
+    padding: 0rem;
+    text-align: center;
+    color: ivory;
+    background: #dd0033;
+    border: 0.3rem solid #333333;
+  }
+  
+  #biography {
+    grid-area: biography;
+    width: 100%;
+    margin: 0px;
+  }
+  
+  #tribute-info {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    max-width: 80%;
+    margin: auto;
+    text-align: justify;
+  }
+  
+  #tribute-link {
+    font-weight: 600;
+  }
+  
+  /* Style the blockquote */
+  blockquote {
+    grid-area: quote;
+    font-style: italic;
+    background: #FFF3F3;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 2.25rem;
+    max-width: 80%;
+    border-left: 0.5rem solid;
+    border-left-color: #dd0033;
+    padding-left: 1.5rem;
+  }
+  
+  /* Style discography section as CSS grid */
+  /* Style h3 (discography album titles) headers */
+  h3 {
+    font-weight: 800;
+    font-size: 2rem;
+    font-style: italic;
+  }
+  
+  #discography {
+    grid-area: discography;
+    width: 100%;
+  }
+  
+  #discography-header {
+    margin: 0px;
+    text-align: center;
+  }
+  
+  /* Discography CSS grid areas setup for mobile, media queries to be used for other devices */
+  #discography-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(15, auto);
+    justify-items: center;
+    grid-template-areas:
+      "album-1"
+      "album-2"
+      "album-3"
+      "album-4"
+      "album-5"
+      "album-6"
+      "album-7"
+      "album-8"
+      "album-9"
+      "album-10"
+      "album-11"
+      "album-12"
+      "album-13"
+      "album-14"
+      "album-15";
+  }
+  
+  /* Media query for tablet setup */
+  @media only screen and (min-width: 768px) {
+   
+    h1 {
+      font-size: 8rem;
+      line-height: 7rem;
+    }
+    
+    #img-caption {
+      font-size: 1.75rem;
+      line-height: 3rem;
+      top: 9rem;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      padding: 2.5rem;
+      border-width: 0.5rem;
+    }
+    
+    #discography-grid {
+    display: grid;
+    width: 60rem;
+    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(9, auto);
+    justify-items: center;
+    grid-template-areas:
+      "album-1 album-2"
+      "album-3 album-4"
+      "album-5 album-6"
+      "album-7 album-8"
+      "album-9 album-10"
+      "album-11 album-12"
+      "album-13 album-14"
+      "album-15 album-16"
+      "album-17 album-18";
+    }
+  }
+  
+  /* Media query for desktop setup */
+  @media only screen and (min-width: 1024px) {
+   
+    #discography-grid {
+    display: grid;
+    width: 90rem;
+    margin: auto;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(5, auto);
+    justify-items: center;
+    grid-template-areas:
+      "album-1 album-2 album-3"
+      "album-4 album-5 album-6"
+      "album-7 album-8 album-9"
+      "album-10 album-11 album-12"
+      "album-13 album-14 album-15";   
+    }
+  }
+  
+  /* Style each individual discography item using a CSS grid*/
+  .discography-item {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+      ". album-title ."
+      ". album-cover album-link"
+      "album-details album-details album-details";
+    background: #333333;
+    opacity: 0.4;
+    width: 28rem;
+    border-radius: 2rem;
+    color: ivory;
+    animation-name: reverse-album-animation;
+    animation-duration: 500ms;
+  }
+  
+  .discography-album-title {
+    grid-area: album-title;
+    text-align: center;
+  }
+  
+  .discography-album-cover {
+    grid-area: album-cover;
+    max-width: 18.5rem;
+    height: auto;
+    border-style: solid;
+    border-width: 0.5rem;
+    border-color: #dd0033;
+    border-radius: 2rem;
+  }
+  
+  .discography-album-details {
+    grid-area: album-details;
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 1rem;
+    text-align: center;
+  }
+  
+  /* Style the spotify icon on each discography item*/
+  .album-link {
+    grid-area: album-link;
+    max-width: 2.25rem;
+    color: ivory;
+  }
+  
+  .album-link > img {
+    grid-area: inherit;
+    max-width: inherit;
+  }
+  
+  /* Style each discography item animation using hover and keyframes */
+  .discography-item:hover {
+    animation-name: album-animation;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes album-animation {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+      box-shadow: 1rem 1rem 2rem 0rem rgba(0, 0, 0, 0.4);
+      transform: scale(1.025);
+    }
+  }
+  
+  @keyframes reverse-album-animation {
+    from {
+      opacity: 1;
+      box-shadow: 1rem 1rem 2rem 0rem rgba(0, 0, 0, 0.4);
+      transform: scale(1.025);
+    }
+    to {
+      opacity: 0.4;
+    }
+  }
+  
+  /* Assign grid areas for each discography item */
+  #album-1 {
+    grid-area: album-1;
+  }
+  #album-2 {
+    grid-area: album-2;
+  }
+  #album-3 {
+    grid-area: album-3;
+  }
+  #album-4 {
+    grid-area: album-4;
+  }
+  #album-5 {
+    grid-area: album-5;
+  }
+  #album-6 {
+    grid-area: album-6;
+  }
+  #album-7 {
+    grid-area: album-7;
+  }
+  #album-8 {
+    grid-area: album-8;
+  }
+  #album-9 {
+    grid-area: album-9;
+  }
+  #album-10 {
+    grid-area: album-10;
+  }
+  #album-11 {
+    grid-area: album-11;
+  }
+  #album-12 {
+    grid-area: album-12;
+  }
+  #album-13 {
+    grid-area: album-13;
+  }
+  #album-14 {
+    grid-area: album-14;
+  }
+  #album-15 {
+    grid-area: album-15;
+  }
+  #album-16 {
+    grid-area: album-16;
+  }
+  #album-17 {
+    grid-area: album-17;
+  }
+  #album-18 {
+    grid-area: album-18;
+  }
+  
+  /* Style tribute page footer */
+  #tribute-footer {
+    grid-area: footer;
+    text-align: center;
+    background: #dd0033;
+    font-weight: 600;
+    font-size: 1.5rem;
+    border: 0.3rem solid #333333;
+  }
+  
+  
+  
+  
